@@ -20,8 +20,8 @@ permissions:
 
 jobs:
   release:
-    uses: bazel-contrib/.github/.github/workflows/release_ruleset.yaml@0df7597772175acb83090f52d91928991969659b
+    uses: bazel-contrib/.github/.github/workflows/release_ruleset.yaml@23b69a7ea7c1e36d0a92980d049ba72e6f4809f7
     with:
-      # If called from tag.yaml, the new tag isn't the triggering event
+      prerelease: false
       tag_name: ${{ inputs.tag_name }}
       release_files: rules_mylang-*.tar.gz
