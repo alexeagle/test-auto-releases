@@ -6,6 +6,10 @@ name: Release
 on:
   # Can be triggered from the tag.yaml workflow
   workflow_call:
+    inputs:
+      tag_name:
+        required: true
+        type: string
   # Or, developers can manually push a tag from their clone
   push:
     tags:
@@ -18,4 +22,6 @@ jobs:
   release:
     uses: bazel-contrib/.github/.github/workflows/release_ruleset.yaml@v6
     with:
+      # If called from tag.yaml, the new tag isn't the triggering event
+      tag_name: ${{ inputs.tag_name || github.ref }}
       release_files: rules_mylang-*.tar.gz

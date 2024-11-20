@@ -23,6 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       new-tag: ${{ steps.ccv.outputs.new-tag }}
+      new-tag-version: ${{steps.ccv.outputs.new-tag-version}}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,6 +35,8 @@ jobs:
   release:
     needs: tag
     uses: ./.github/workflows/release.yml
+    with:
+      tag_name: needs.tag.outputs.new-tag-version
     if: needs.tag.outputs.new-tag == 'true'
     permissions:
       # create release
