@@ -11,9 +11,9 @@ on:
         required: true
         type: string
   # Or, developers can manually push a tag from their clone
-  push:
-    tags:
-      - "v*.*.*"
+  # push:
+  #   tags:
+  #     - "v*.*.*"
 
 permissions:
   contents: write
