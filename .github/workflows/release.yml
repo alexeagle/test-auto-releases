@@ -11,16 +11,16 @@ on:
         required: true
         type: string
   # Or, developers can manually push a tag from their clone
-  # push:
-  #   tags:
-  #     - "v*.*.*"
+  push:
+    tags:
+      - "v*.*.*"
 
 permissions:
   contents: write
 
 jobs:
   release:
-    uses: bazel-contrib/.github/.github/workflows/release_ruleset.yaml@v6
+    uses: bazel-contrib/.github/.github/workflows/release_ruleset.yaml@45a13073e2696453b45c01494cd8336fa6706806
     with:
       # If called from tag.yaml, the new tag isn't the triggering event
       tag_name: ${{ inputs.tag_name || github.ref }}
