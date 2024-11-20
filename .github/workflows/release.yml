@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   release:
-    uses: bazel-contrib/.github/.github/workflows/release_ruleset.yaml@45a13073e2696453b45c01494cd8336fa6706806
+    uses: bazel-contrib/.github/.github/workflows/release_ruleset.yaml@0df7597772175acb83090f52d91928991969659b
     with:
       # If called from tag.yaml, the new tag isn't the triggering event
       tag_name: ${{ inputs.tag_name }}
