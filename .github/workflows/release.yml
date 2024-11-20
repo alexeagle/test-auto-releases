@@ -4,6 +4,9 @@
 name: Release
 
 on:
+  # Can be triggered from the tag.yaml workflow
+  workflow_call:
+  # Or, developers can manually push a tag from their clone
   push:
     tags:
       - "v*.*.*"
