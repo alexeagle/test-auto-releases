@@ -4,7 +4,7 @@
 
 If you are using [devcontainers](https://code.visualstudio.com/docs/devcontainers/containers)
 and/or [codespaces](https://github.com/features/codespaces) then you can start
-contributing immediately and skip the next step.
+contributing immediately and skip the next step!
 
 ## Formatting
 
